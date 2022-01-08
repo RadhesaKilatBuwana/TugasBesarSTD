@@ -66,9 +66,37 @@ void inputEvent(list &List) {
         cout << "\nNama Event    : "; getline(cin, Event.namaEvent);
         cout << "Jenis Event   : "; getline(cin, Event.jenisEvent);
         cout << "Tempat Event  : "; getline(cin, Event.tempatEvent);
-        cout << "Tanggal Event : "; cin >> Event.tanggalEvent.tgl;
-        cout << "Bulan Event   : "; cin >> Event.tanggalEvent.bulan;
         cout << "Tahun Event   : "; cin >> Event.tanggalEvent.tahun;
+        cout << "Bulan Event   : "; cin >> Event.tanggalEvent.bulan;
+        while((Event.tanggalEvent.bulan < 1) && (Event.tanggalEvent.bulan > 12){
+            cout << "Input Tidak Valid!!" << endl;
+            cout << "Bulan Event   : "; cin >> Event.tanggalEvent.bulan;
+        }
+        if ((Event.tanggalEvent.bulan == 1) || (Event.tanggalEvent.bulan == 3) || (Event.tanggalEvent.bulan == 5) || (Event.tanggalEvent.bulan == 7) || (Event.tanggalEvent.bulan == 8) || (Event.tanggalEvent.bulan == 10) || (Event.tanggalEvent.bulan == 12)){
+           cout << "Tanggal Event : "; cin >> Event.tanggalEvent.tgl;
+           while((Event.tanggalEvent.tgl < 1) && (Event.tanggalEvent.tgl > 31)){
+               cout << "Input Tidak Valid!!" << endl;
+               cout << "Tanggal Event : "; cin >> Event.tanggalEvent.tgl;
+           }
+        } else if ((Event.tanggalEvent.bulan == 4) || (Event.tanggalEvent.bulan == 6) || (Event.tanggalEvent.bulan == 9) || (Event.tanggalEvent.bulan == 11)  {
+           cout << "Tanggal Event : "; cin >> Event.tanggalEvent.tgl;
+           while((Event.tanggalEvent.tgl < 1) && (Event.tanggalEvent.tgl > 30)){
+               cout << "Input Tidak Valid!!" << endl;
+               cout << "Tanggal Event : "; cin >> Event.tanggalEvent.tgl;
+           }  
+        } else if ((Event.tanggalEvent.bulan == 2) && ((Event.tanggalEvent.tahun % 4) == 0)) {
+           cout << "Tanggal Event : "; cin >> Event.tanggalEvent.tgl;
+           while((Event.tanggalEvent.tgl < 1) && (Event.tanggalEvent.tgl > 29)){
+               cout << "Input Tidak Valid!!" << endl;
+               cout << "Tanggal Event : "; cin >> Event.tanggalEvent.tgl;
+           }  
+        } else if ((Event.tanggalEvent.bulan == 2) && ((Event.tanggalEvent.tahun % 4) != 0)) {
+           cout << "Tanggal Event : "; cin >> Event.tanggalEvent.tgl;
+           while((Event.tanggalEvent.tgl < 1) && (Event.tanggalEvent.tgl > 29)){
+               cout << "Input Tidak Valid!!" << endl;
+               cout << "Tanggal Event : "; cin >> Event.tanggalEvent.tgl;
+           }  
+        
         cout << "Quota Event   : "; cin >> Event.quota;
         
         cout << "\n Data sudah benar (Y/N) : "; ulang = getche();
